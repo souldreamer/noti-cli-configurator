@@ -1,0 +1,38 @@
+<md-toolbar color="secondary" class="small">
+	<span>Commands</span>
+	<span class="fill-space"></span>
+	<span>
+		<button
+			md-mini-fab color="primary" class="small-scale--moved-x"
+			(click)="addCommand()"
+		>
+			<md-icon>add</md-icon>
+		</button>
+	</span>
+</md-toolbar>
+<app-commands-selector
+	[currentCommand]="commands.currentCommand$ | async"
+	[commands]="commands.commands$ | async"
+	(change)="commands.selectCurrent($event)"
+	(deleteCurrent)="commands.deleteCurrent()"
+></app-commands-selector>
+<div
+	style="display: block;"
+	*ngIf="(commands.currentCommand$ | async) != null"
+    [@animateHeightOnShowHide]="'show'"
+>
+	<app-general-information
+		[command]="commands.currentCommand$ | async"
+		(update)="updateCurrentCommand($event)"
+	></app-general-information>
+	<app-aliases
+		[command]="commands.currentCommand$ | async"
+		(update)="updateCurrentCommand($event)"
+	></app-aliases>
+	<app-watchers
+		*ngFor="let type of ['stdout', 'stderr']"
+		[type]="type"
+		[command]="commands.currentCommand$ | async"
+		(update)="updateCurrentCommand($event)"
+	></app-watchers>
+</div>

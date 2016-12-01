@@ -1,1 +1,134 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/core/theming/prebuilt/purple-green.css';
+
+body {
+	margin: 0;
+}
+
+.fill-space {
+	flex: 1 1 auto;
+}
+
+button[md-mini-fab] {
+	box-shadow: none;
+}
+
+md-toolbar {
+	min-height: 3em !important;
+}
+md-toolbar md-toolbar-row {
+	height: 3em !important;
+}
+
+md-toolbar.short {
+	min-height: 2em !important;
+}
+md-toolbar.short md-toolbar-row {
+	height: 2em !important;
+}
+
+md-toolbar.x-short {
+	min-height: 1.5em !important;
+}
+md-toolbar.x-short md-toolbar-row {
+	height: 1.5em !important;
+}
+
+md-toolbar.faded {
+	background-color: #656565 !important;
+}
+
+.md-overlay-pane {
+	max-height: 95vh;
+	max-width: 95vw;
+	overflow: auto;
+}
+
+md-dialog-container {
+	background-color: white !important;
+}
+
+button.ng2-dropdown-button {
+	max-width: none;
+}
+
+.small-scale {
+	transform: translate3d(0, 0, 0) scale(0.75) !important;
+}
+.small-scale--moved {
+	transform: translate3d(25%, 30%, 0) scale(0.75) !important;
+}
+.small-scale--moved-x {
+	transform: translate3d(25%, 0, 0) scale(0.75) !important;
+}
+.x-small-scale {
+	transform: translate3d(0, 0, 0) scale(0.5) !important;
+}
+
+md-card .small-scale {
+	transform: translate3d(-15%, -15%, 0) scale(0.75) !important;
+}
+
+md-icon.small-scale {
+	transform: translate3d(0, 0, 0) scale(0.75) !important;
+	margin-left: -0.5em;
+}
+
+md-card-actions .small-scale--no-scale {
+	transform: translate3d(0, -0.5em, 0) !important;
+	font-size: 0.75em !important;
+	padding: 0 0.75em !important;
+}
+md-card-actions {
+	align-items: center;
+}
+
+.material-icons {
+	font-size: 1.5em;
+}
+
+md-icon.large.material-icons {
+	font-size: 40px;
+}
+
+.md-input-placeholder:not(.md-focused) {
+	color: black;
+}
+
+.no-flex-change {
+	flex: 0 0 auto;
+}
+
+md-card {
+	background: white;
+	color: black;
+	padding: 8px !important;
+	margin-bottom: 8px !important;
+	box-shadow: none !important;
+}
+
+md-card-subtitle {
+	color: rgba(0, 0, 0, 0.5) !important;
+	font-size: 0.75em !important;
+	font-weight: bold !important;
+}
+
+md-card-content {
+	margin-bottom: 0 !important;
+}
+
+md-toolbar.small {
+	font-size: 1em;
+}
+
+md-toolbar.x-small {
+	font-size: 0.75em;
+}
+
+* {
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.ng2-dropdown-button__caret {
+	flex: 0 0 1em !important;
+}

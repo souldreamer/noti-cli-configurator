@@ -1,0 +1,6 @@
+<md-input
+	[placeholder]="label"
+	[value]="getDisplayString(alias.cliParameters)"
+	(blur)="update.emit(aliasInput.value)"
+	#aliasInput
+></md-input>

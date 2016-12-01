@@ -1,0 +1,9 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	padding: 8px;
+}
+
+md-input {
+	flex: 1 1 auto;
+}

@@ -1,0 +1,23 @@
+<span class="name">
+	<md-input
+		placeholder="name"
+		[value]="name"
+	    (blur)="valueChange()"
+	    #nameInput
+	></md-input>
+</span>
+<span class="value">
+	<md-input
+		placeholder="value"
+		[value]="value"
+		(blur)="valueChange()"
+		#valueInput
+	></md-input>
+</span>
+<span class="actions">
+	<button
+		*ngIf="allowDelete"
+		md-mini-fab color="primary" class="small-scale--moved-x"
+		(click)="delete.emit()"
+	><md-icon>delete_forever</md-icon></button>
+</span>

@@ -1,0 +1,24 @@
+<md-toolbar color="secondary" class="x-small short">
+	<span>Command watchers (<code>{{type}}</code>)</span>
+	<span class="fill-space"></span>
+	<span>
+		<button
+			md-mini-fab color="primary" class="small-scale--moved"
+			(click)="addWatcher()"
+		>
+			<md-icon>add</md-icon>
+		</button>
+	</span>
+</md-toolbar>
+<div has-data *ngIf="doesSectionHaveData()">
+	<app-watcher
+		*ngFor="let watcher of watchers; let index = index"
+		[label]="'Watcher #' + (index + 1)"
+		[watcher]="watcher"
+		(update)="updateWatcher(watcher, $event)"
+	></app-watcher>
+</div>
+<div empty *ngIf="!doesSectionHaveData()">
+	No watchers defined. Use the button in the <em>Command watchers (<code>{{type}}</code>)</em>
+	header to add one.
+</div>

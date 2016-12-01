@@ -1,0 +1,21 @@
+<md-toolbar color="secondary" class="small">
+	<span>Global watchers</span>
+	<span class="fill-space"></span>
+	<span>
+		<button
+			md-mini-fab color="primary" class="small-scale--moved-x"
+		    (click)="addNew()"
+		><md-icon>add</md-icon></button>
+	</span>
+</md-toolbar>
+<div style="display: flex; flex-direction: column-reverse; padding: 8px;" *ngIf="globalWatchers.watchers.length">
+	<app-watcher
+		*ngFor="let watcher of globalWatchers.watchers; let index = index"
+		[label]="'Watcher #' + (index + 1)"
+	    [watcher]="watcher"
+	    (remove)="globalWatchers.delete(watcher)"
+	></app-watcher>
+</div>
+<div style="display: block; padding: 16px;" *ngIf="!globalWatchers.watchers.length">
+	No global watchers defined. Use the button in the <em>Global watchers</em> header to add one.
+</div>

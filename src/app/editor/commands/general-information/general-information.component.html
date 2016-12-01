@@ -1,0 +1,11 @@
+<md-input
+	placeholder="command name"
+	[ngModel]="command.name"
+	(ngModelChange)="update.emit({name: $event})"
+></md-input>
+<md-input
+	placeholder="parameters"
+	[ngModel]="getDisplayString(command.cliParameters)"
+	(ngModelChange)="update.emit({cliParameters: getParameters(parametersInput.value)})"
+	#parametersInput
+></md-input>

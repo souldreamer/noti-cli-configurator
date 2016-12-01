@@ -1,0 +1,14 @@
+:host {
+	display: block;
+}
+
+[has-data] {
+	display: flex;
+	flex-direction: column;
+	padding: 8px;
+}
+
+[empty] {
+	display: block;
+	padding: 16px;
+}

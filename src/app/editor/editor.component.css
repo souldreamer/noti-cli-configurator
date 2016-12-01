@@ -1,0 +1,26 @@
+.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.col-50 {
+	flex: 0 0 50%;
+}
+.col-100 {
+	flex: 0 0 100%;
+}
+.col-33 {
+	flex: 0 0 33%;
+}
+
+.col-33:last-of-type {
+	flex: 1 1 33%;
+}
+.col-50:last-of-type {
+	flex: 1 1 50%;
+}
+
+ng2-select, md-input {
+	flex: 1 1 auto;
+}

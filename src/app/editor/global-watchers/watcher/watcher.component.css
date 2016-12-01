@@ -1,0 +1,46 @@
+md-card-content {
+	display: flex;
+	flex-direction: column;
+}
+
+[row] {
+	display: flex;
+	flex-direction: row;
+}
+
+[row] * {
+	flex: 1 1 auto;
+}
+[row] ng2-select {
+	padding-top: 0.5em;
+}
+
+[has-data] {
+	display: flex;
+	flex-direction: column;
+	padding: 8px;
+}
+
+md-card-header {
+	cursor: pointer;
+}
+
+md-card-header * {
+	align-self: center;
+}
+
+.status {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: small;
+	cursor: default;
+}
+
+.status .material-icons {
+	font-size: 1.75em;
+}
+
+.warn {
+	color: coral;
+}

@@ -1,0 +1,14 @@
+<ng2-select
+	placeholder="Select command"
+	[options]="commands"
+	[displayBy]="displayBy"
+	[ngModel]="currentCommand"
+	(ngModelChange)="change.emit($event)"
+></ng2-select>
+<button
+	*ngIf="currentCommand != null"
+	md-mini-fab color="primary" class="small-scale--moved-x"
+	(click)="deleteCurrent.emit()"
+>
+	<md-icon>remove</md-icon>
+</button>

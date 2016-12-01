@@ -1,0 +1,88 @@
+<md-card>
+	<md-card-header
+		(click)="toggleEditing()"
+	>
+		<md-icon md-card-avatar class="large">watch_later</md-icon>
+		<md-card-title>{{label}}</md-card-title>
+		<md-card-subtitle>{{watcher.name}}</md-card-subtitle>
+		<span class="fill-space"></span>
+		<md-icon
+			style="align-self: center;"
+			[@animateRotation]="open ? 'up' : 'down'"
+		>keyboard_arrow_up</md-icon>
+		<button
+			*ngIf="!open"
+			[@animateSizeOnShowHide]="'show'"
+			md-mini-fab color="primary" class="small-scale--moved-x"
+			(click)="remove.next()"
+		><md-icon>remove</md-icon></button>
+	</md-card-header>
+	<md-card-content
+		*ngIf="open"
+		[@animateHeightOnShowHide]="'show'"
+		(@animateHeightOnShowHide.done)="toggleShowChildren()"
+	>
+		<div row>
+			<md-input
+				placeholder="watcher name"
+				[value]="watcher.name"
+			></md-input>
+			<ng2-select
+				placeholder="watcher type"
+				[options]="['end-stream', 'regex']"
+				[ngModel]="watcher.type"
+			></ng2-select>
+		</div>
+		<div
+			has-data
+			*ngIf="parameters && parameters.length > 0"
+		>
+			<md-toolbar
+				color="secondary" class="small short faded"
+				[@animateHeightOnEnterLeaveStrict]="canAnimateChildren ? 'show' : 'showNotAnimate'"
+			><span>Watcher parameters</span></md-toolbar>
+			<app-watcher-input
+				*ngFor="let parameter of parameters"
+				[name]="parameter.name"
+				[value]="parameter.value"
+				[@animateHeightOnEnterLeaveStrict]="canAnimateChildren ? 'show' : 'showNotAnimate'"
+			></app-watcher-input>
+		</div>
+		<div
+			has-data
+			*ngIf="variables && variables.length > 0"
+		>
+			<md-toolbar
+				color="secondary" class="small short faded"
+				[@animateHeightOnEnterLeaveStrict]="canAnimateChildren ? 'show' : 'showNotAnimate'"
+			><span>Variables</span></md-toolbar>
+			<app-watcher-input
+				*ngFor="let variable of variables"
+				[name]="variable.name"
+				[value]="variable.value"
+				[@animateHeightOnEnterLeaveStrict]="canAnimateChildren ? 'show' : 'showNotAnimate'"
+			></app-watcher-input>
+		</div>
+	</md-card-content>
+	<md-card-actions
+		*ngIf="open"
+		[@animateHeightOnShowHide]="'show'"
+		align="end"
+	>
+		<button
+			md-button color="primary" class="small-scale--no-scale"
+			(click)="addParameter()"
+		><md-icon class="small-scale">add</md-icon>parameter</button>
+		<button
+			md-button color="primary" class="small-scale--no-scale"
+			(click)="addVariable()"
+		><md-icon class="small-scale">add</md-icon>variable</button>
+		<span class="fill-space"></span>
+		<span class="small-scale--no-scale status"><md-icon>done</md-icon> Saved </span>
+		<span class="small-scale--no-scale status warn"><md-icon>warning</md-icon> Invalid </span>
+		<button
+			md-mini-fab color="primary" class="small-scale"
+			(click)="remove.next()"
+		><md-icon>remove</md-icon></button>
+	</md-card-actions>
+</md-card>

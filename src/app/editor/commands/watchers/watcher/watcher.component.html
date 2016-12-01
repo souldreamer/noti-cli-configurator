@@ -1,0 +1,10 @@
+<md-card>
+	<md-card-subtitle>{{label}}</md-card-subtitle>
+	<md-card-content>{{watcher | json}}</md-card-content>
+	<md-card-actions align="end">
+		<button
+			md-mini-fab color="primary" class="small-scale"
+			(click)="remove.next()"
+		><md-icon>remove</md-icon></button>
+	</md-card-actions>
+</md-card>

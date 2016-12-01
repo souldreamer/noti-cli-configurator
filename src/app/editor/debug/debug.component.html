@@ -1,0 +1,8 @@
+<md-toolbar color="primary" class="small">
+	<span>Debug information</span>
+</md-toolbar>
+<app-variable
+	*ngFor="let variable of variables"
+	[label]="variable.label"
+    [value]="variable.value"
+></app-variable>

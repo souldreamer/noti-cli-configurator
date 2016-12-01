@@ -1,0 +1,9 @@
+:host {
+	display: flex;
+	flex-direction: row;
+	padding: 0 16px;
+}
+
+ng2-select, md-input {
+	flex: 1 1 auto;
+}

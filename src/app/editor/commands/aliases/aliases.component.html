@@ -1,0 +1,18 @@
+<md-toolbar color="secondary" class="x-small short">
+	<span>Aliases</span>
+	<span class="fill-space"></span>
+	<span>
+		<button md-mini-fab color="primary" class="small-scale--moved" (click)="addCommandAlias()"><md-icon>add</md-icon></button>
+	</span>
+</md-toolbar>
+<div has-data *ngIf="doesSectionHaveData()">
+	<app-alias
+		*ngFor="let alias of command.aliases; let index = index; trackBy: trackCommandAliases"
+		[label]="'Alias #' + (index + 1) + ' parameters'"
+	    [alias]="alias"
+	    (update)="updateCommandAlias(alias, $event)"
+	></app-alias>
+</div>
+<div empty *ngIf="!doesSectionHaveData()">
+	No aliases defined. Use the button in the <em>Aliases</em> header to add one.
+</div>

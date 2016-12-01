@@ -1,0 +1,47 @@
+[
+	{
+		"name": "ng serve",
+		"cliParameters": ["serve"],
+		"aliases": [
+			{
+				"cliParameters": ["s"]
+			}
+		],
+		"watchers": {
+			"stdout": [
+				"server-online",
+				"error",
+				"rebuild-start",
+				"rebuild-end"
+			],
+			"stderr": [
+				{
+					"name": "all",
+					"parameters": {
+						"title": "There was an error"
+					}
+				}
+			]
+		}
+	},
+	{
+		"name": "ng generate",
+		"cliParameters": ["generate"],
+		"aliases": [
+			{
+				"cliParameters": ["g"]
+			}
+		],
+		"watchers": {
+			"stdout": [
+				{
+					"type": "end-stream",
+					"parameters": {
+						"title": "${cliParam[2]|capitalize} '${cliParam[3]}' generated"
+					}
+				}
+			],
+			"stderr": []
+		}
+	}
+]

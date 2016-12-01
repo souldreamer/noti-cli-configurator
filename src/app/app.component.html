@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+	<span><code>noti-cli</code> configuration editor</span>
+	<span class="fill-space"></span>
+	<button md-button color="secondary" (click)="reset()"><md-icon>create_new_folder</md-icon> New</button>
+	<button md-button color="secondary"><md-icon>file_download</md-icon> Load</button>
+	<button md-button color="secondary"><md-icon>save</md-icon> Save</button>
+</md-toolbar>
+<app-editor></app-editor>

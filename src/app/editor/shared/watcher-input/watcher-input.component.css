@@ -1,0 +1,25 @@
+:host {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+span.name {
+	flex: 0 0 33%;
+}
+span.value {
+	flex: 1 1 66%;
+}
+
+[md-mini-fab] {
+	background-color: inherit;
+	color: black;
+}
+
+span.actions {
+	flex: 0 0 auto;
+}
+
+md-input {
+	display: block;
+}
